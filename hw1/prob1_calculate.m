@@ -1,3 +1,4 @@
+clear;close all;
 M = 7000;
 N = 21000;
 

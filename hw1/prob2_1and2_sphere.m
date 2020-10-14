@@ -1,21 +1,27 @@
+clear;close all;
 tic
 
-path = '20150608_438NiE_fish01_ZCM_ROI1_ZCM_ZCM_warped.swc.txt';
+path = 'Purkinje-slice-ageP43-6.CNG.swc.txt';
+% path = 'j8_L23pc.CNG.swc.txt';
+% path = '20150608_438NiE_fish01_ZCM_ROI1_ZCM_ZCM_warped.swc.txt';
 
+%load the .txt file
 [segment_index, segment_type, x_coord, y_coord, z_coord, segment_diameter, father_segment] = readvars(path);
 
+%store the data in the array
 segment_radius = segment_diameter / 2;
 segment_index = int64(segment_index);
 father_segment = int64(father_segment);
 segment_type = int8(segment_type);
-total = max(segment_index);
-branching_mark = zeros(1, total);
+total = max(segment_index); % the number of whole points
+branching_mark = zeros(1, total); % to count how many points is connecting to one point with the exact index
 
-n = 30;
-[x, y, z] = sphere(n);
 
-color1 = zeros(size(x));
-color3 = zeros(size(x));
+n = 30; % the face number of the sphere
+[x, y, z] = sphere(n); % to draw every dendrite
+
+color1 = zeros(size(x)); % color of cell body
+color3 = zeros(size(x)); % color of dendrite
 
 for i = 1:1:length(color1(1, :))
 
@@ -39,7 +45,8 @@ end
 
 hold on
 
-parfor i = 1:total
+% draw cell body and dendrite one by one
+for i = 1:total
 
     x2 = x * segment_radius(i);
     y2 = y * segment_radius(i);
@@ -54,14 +61,11 @@ parfor i = 1:total
     s.EdgeColor = 'none';
 end
 
-%r = sqrt(x_coord.^2+y_coord.^2+z_coord.^2);
-
-%scatter3(x_coord, y_coord, z_coord, size, color, 'filled');
-
+% draw the lines between the cell bodies and dendrite
 for i = 1:total
 
-    if father_segment(i) > 0
-        branching_mark(father_segment(i)) = 1;
+    if father_segment(i) > 0% exclude the cell body
+
         temp_x = [x_coord(i), x_coord(father_segment(i))];
         temp_y = [y_coord(i), y_coord(father_segment(i))];
         temp_z = [z_coord(i), z_coord(father_segment(i))];
@@ -70,7 +74,6 @@ for i = 1:total
 
 end
 
-branching_num = sum(branching_mark);
 hold off
 
 toc

@@ -14,19 +14,19 @@
 
    then, $ p = \dfrac{R_d}{R} = \dfrac{\binom{M}{K}!}{\binom{M}{K}^N[\binom{M}{K}-N]!}$
 
-2. `plot_p_1.m`draw the picture
+2. `prob1_plot/.m`draw the picture
 
    M=10,N=5
 
-   <img src="F:\2020at\comp_neuron\hw1\pic2.png" alt="pic2" style="zoom:50%;" />
+   <img src="F:\2020at\comp_neuron\hw1\pic\pic2.png" alt="pic2" style="zoom:50%;" />
 
    M=15,N=5
 
-   ![pic1](F:\2020at\comp_neuron\hw1\pic1.png)
+   ![pic1](F:\2020at\comp_neuron\hw1\pic\pic1.png)
 
    M = 20,N = 5
 
-   ![pic3](F:\2020at\comp_neuron\hw1\pic3.png)
+   ![pic3](F:\2020at\comp_neuron\hw1\pic\pic3.png)
 
 3. the calculation steps attached at the last page.
 
@@ -36,25 +36,115 @@
 
 ## Visualization of dendritic morphology
 
-change `path`  in `dendritic.m` to draw different plot.
+1. change `path`  in `prob2_1and2_sphere.m` to draw different plot.
 
-the following 2-d picture
+   for the sake of saving time, I also use the `scatter` function in `prob2_1and2_scatter.m`  rather than `sphere` and `surf` to draw a plot
 
-Purkinje:
+   Purkinje:
 
-![purkinje_2d](F:\2020at\comp_neuron\hw1\purkinje_2d.png)
+   ![purkinje](F:\2020at\comp_neuron\hw1\pic\purkinje.png)
 
-j8:
+   ![purkinje_2d](F:\2020at\comp_neuron\hw1\pic\purkinje_2d.png)
 
-![j8_2d](F:\2020at\comp_neuron\hw1\j8_2d.png)
+   j8:
 
-NiE_fish:
+   ![j8_3d](F:\2020at\comp_neuron\hw1\pic\j8_3d.png)
 
-![fish_3d](F:\2020at\comp_neuron\hw1\fish_3d.png)
+   ![j8_2d](F:\2020at\comp_neuron\hw1\pic\j8_2d.png)
 
+   zebra fish:
 
+   ![fish_3d](F:\2020at\comp_neuron\hw1\pic\fish_3d.png)
 
+   ![fish](F:\2020at\comp_neuron\hw1\pic\fish.png)
 
+2. the point which connects with 3 or more other points is a branching point, so we use the following code in `prob2_3.m`  to count
+
+   ```matlab
+   for i = 1:total
+   
+       if father_segment(i) > 0%exclude the cell body
+           
+           branching_mark(i) = branching_mark(i) + 1;
+           branching_mark(father_segment(i)) = branching_mark(father_segment(i)) + 1;
+       end
+   
+   end
+   
+   
+   % the point which connects with 3 or more points is a branching point
+   for i = 1:total
+       if branching_mark(i)>2
+           is_branch(i) = 1;
+       end
+   end
+   
+   
+   branching_num = sum(is_branch);
+   fprintf("the branching number is %d\n", branching_num);
+   ```
+
+   the number of branching point in three files are 379, 51, 128
+
+3. change path in `prob2_4_1.m` to draw different plot
+
+   purkinje:
+
+   ![purkinje_sholl](F:\2020at\comp_neuron\hw1\pic\purkinje_sholl.png)
+
+   ![purkinje_sholl_2d](F:\2020at\comp_neuron\hw1\pic\purkinje_sholl_2d.png)
+
+   j8:
+
+   ![j8_sholl_3d](F:\2020at\comp_neuron\hw1\pic\j8_sholl_3d.png)
+
+   ![j8_sholl_2d](F:\2020at\comp_neuron\hw1\pic\j8_sholl_2d.png)
+
+   zebra fish:
+
+   ![fish_sholl_3d](F:\2020at\comp_neuron\hw1\pic\fish_sholl_3d.png)
+
+   ![fish_sholl_2d](F:\2020at\comp_neuron\hw1\pic\fish_sholl_2d.png)
+
+    
+
+   to get the intersections between sphere and dendrites, I consider this question as follows, there are two points, one is at the inner side of a sphere, another is at the outer side, then we can conclude that the line between this two points have an intersection with the sphere, vice versa. Then, we do these kind of things to every pair of points with a series of spheres which radii grow step by step. I get the algorithm as follows in `prob2_4_2.m`
+
+   ```matlab
+   for i = 1:n + 5
+       temp_r = step * i;
+       r_length(i) = temp_r;
+       count = 0;
+   
+       for j = 2:total
+   
+           if (r(j) - temp_r) * (r(father_segment(j) )- temp_r) <= 0
+               count = count + 1;
+           end
+   
+       end
+   
+       inter_num(i) = count;
+   end
+   ```
+
+    then,  I get the plots
+
+   purkinje:
+
+   ![purkinje_inter](F:\2020at\comp_neuron\hw1\pic\purkinje_inter.png)
+
+   j8:
+
+    ![j8_inter](F:\2020at\comp_neuron\hw1\pic\j8_inter.png)
+
+   zebra fish:
+
+   ![zebra_fish_intersection](F:\2020at\comp_neuron\hw1\pic\fish_intersection.png)
+
+    
+
+   
 
 ## Derivation of the Goldman-Hodgkin-Katz formula for membrane potential
 

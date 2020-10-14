@@ -1,3 +1,4 @@
+clear;close all;
 M = 20; % mossy fiber inputs
 N = 5; % granule cells number
 
