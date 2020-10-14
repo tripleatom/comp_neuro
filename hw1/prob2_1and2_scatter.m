@@ -35,6 +35,7 @@ end
 % scatter3(x_coord, y_coord, z_coord, size, color, 'filled');
 scatter3(x_coord, y_coord, z_coord, segment_diameter * 5, color, 'filled');
 
+% draw lines between points one by one
 for i = 1:total
 
     if father_segment(i) > 0% exclude the cell body
@@ -48,18 +49,6 @@ for i = 1:total
     end
 
 end
-
-% the point which connects with 3 or more points is a branching point
-for i = 1:total
-
-    if branching_mark(i) > 2
-        is_branch(i) = 1;
-    end
-
-end
-
-branching_num = sum(is_branch);
-fprintf("the branching number is %d\n", branching_num);
 
 hold off
 

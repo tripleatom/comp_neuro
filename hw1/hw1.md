@@ -18,15 +18,15 @@
 
    M=10,N=5
 
-   <img src="F:\2020at\comp_neuron\hw1\pic\pic2.png" alt="pic2" style="zoom:50%;" />
+   <img src=".\pic\pic2.png" alt="pic2" style="zoom:50%;" />
 
    M=15,N=5
 
-   ![pic1](F:\2020at\comp_neuron\hw1\pic\pic1.png)
+   ![pic1](.\pic\pic1.png)
 
    M = 20,N = 5
 
-   ![pic3](F:\2020at\comp_neuron\hw1\pic\pic3.png)
+   ![pic3](.\pic\pic3.png)
 
 3. the calculation steps attached at the last page.
 
@@ -42,21 +42,21 @@
 
    Purkinje:
 
-   ![purkinje](F:\2020at\comp_neuron\hw1\pic\purkinje.png)
+   ![purkinje](.\pic\purkinje.png)
 
-   ![purkinje_2d](F:\2020at\comp_neuron\hw1\pic\purkinje_2d.png)
+   ![purkinje_2d](.\pic\purkinje_2d.png)
 
    j8:
 
-   ![j8_3d](F:\2020at\comp_neuron\hw1\pic\j8_3d.png)
+   ![j8_3d](.\pic\j8_3d.png)
 
-   ![j8_2d](F:\2020at\comp_neuron\hw1\pic\j8_2d.png)
+   ![j8_2d](.\pic\j8_2d.png)
 
    zebra fish:
 
-   ![fish_3d](F:\2020at\comp_neuron\hw1\pic\fish_3d.png)
+   ![fish_3d](.\pic\fish_3d.png)
 
-   ![fish](F:\2020at\comp_neuron\hw1\pic\fish.png)
+   ![fish](.\pic\fish.png)
 
 2. the point which connects with 3 or more other points is a branching point, so we use the following code in `prob2_3.m`  to count
 
@@ -90,21 +90,21 @@
 
    purkinje:
 
-   ![purkinje_sholl](F:\2020at\comp_neuron\hw1\pic\purkinje_sholl.png)
+   ![purkinje_sholl](.\pic\purkinje_sholl.png)
 
-   ![purkinje_sholl_2d](F:\2020at\comp_neuron\hw1\pic\purkinje_sholl_2d.png)
+   ![purkinje_sholl_2d](.\pic\purkinje_sholl_2d.png)
 
    j8:
 
-   ![j8_sholl_3d](F:\2020at\comp_neuron\hw1\pic\j8_sholl_3d.png)
+   ![j8_sholl_3d](.\pic\j8_sholl_3d.png)
 
-   ![j8_sholl_2d](F:\2020at\comp_neuron\hw1\pic\j8_sholl_2d.png)
+   ![j8_sholl_2d](.\pic\j8_sholl_2d.png)
 
    zebra fish:
 
-   ![fish_sholl_3d](F:\2020at\comp_neuron\hw1\pic\fish_sholl_3d.png)
+   ![fish_sholl_3d](.\pic\fish_sholl_3d.png)
 
-   ![fish_sholl_2d](F:\2020at\comp_neuron\hw1\pic\fish_sholl_2d.png)
+   ![fish_sholl_2d](.\pic\fish_sholl_2d.png)
 
     
 
@@ -132,15 +132,15 @@
 
    purkinje:
 
-   ![purkinje_inter](F:\2020at\comp_neuron\hw1\pic\purkinje_inter.png)
+   ![purkinje_inter](.\pic\purkinje_inter.png)
 
    j8:
 
-    ![j8_inter](F:\2020at\comp_neuron\hw1\pic\j8_inter.png)
+    ![j8_inter](.\pic\j8_inter.png)
 
    zebra fish:
 
-   ![zebra_fish_intersection](F:\2020at\comp_neuron\hw1\pic\fish_intersection.png)
+   ![zebra_fish_intersection](.\pic\fish_intersection.png)
 
     
 
@@ -207,7 +207,7 @@ $V_{m}=\frac{k_{B}T}{e}\ln\left(\frac{\sum_{i=1}^{N}P_{M_{i}^{+}}[M_{i}^{+}]_{ou
 
 ## Integrate and Fire Neuron
 
-
+was written in hand, pages are attached to the back
 
 ### reference
 

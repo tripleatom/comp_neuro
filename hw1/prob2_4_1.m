@@ -48,6 +48,7 @@ end
 
 r = sqrt(x_coord.^2 + y_coord.^2 + z_coord.^2);
 r_max = ceil(max(r));
+% draw 20 spheres to do sholl analysis
 step = ceil(r_max / 20);
 
 [x, y, z] = sphere();
