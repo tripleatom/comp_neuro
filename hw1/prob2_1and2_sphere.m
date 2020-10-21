@@ -69,11 +69,12 @@ for i = 1:total
         temp_x = [x_coord(i), x_coord(father_segment(i))];
         temp_y = [y_coord(i), y_coord(father_segment(i))];
         temp_z = [z_coord(i), z_coord(father_segment(i))];
-        line(x_coord, y_coord, z_coord);
+        line(temp_x,temp_y,temp_z);%connect segment point and its father segment point
     end
 
 end
 
 hold off
-
+grid on
+axis equal
 toc
