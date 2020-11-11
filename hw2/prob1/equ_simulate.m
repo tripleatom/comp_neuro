@@ -9,12 +9,11 @@ x = fsolve(fun, x0);
 t0 = 0;
 tfinal = 200;
 i_e = 0.5;
-% hold on
+hold on
 % for i = 1:length(i_e)
-% %i_e = 5;
 % %set initial condition
 p0 = x;
-p0(1) = p0(1)+20;
+p0(1) = p0(1) + 20;
 p0(5) = i_e;
 [t, p] = ode45(@HHMODE, [t0, tfinal], p0);
 % plot(t,p(:,1));
@@ -23,6 +22,7 @@ p0(5) = i_e;
 
 %% draw the result: V(t),n(t),m(t),h(t)
 Ylabel = ["V", "n", "m", "h"];
+
 for i = 1:4
     subplot(2, 2, i);
     plot(t, p(:, i));
@@ -39,7 +39,7 @@ function dpdt = HHMODE(~, p)
     E_k = -77;
     E_na = 50;
     C_m = 10;
-    
+
     V = p(1);
     n = p(2);
     m = p(3);
@@ -60,9 +60,3 @@ function dpdt = HHMODE(~, p)
         0;
         ];
 end
-
-%{
-title('Predator/Prey Populations Over Time')
-
-legend('Prey', 'Predators')
-%}
