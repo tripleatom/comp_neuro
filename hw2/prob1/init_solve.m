@@ -6,7 +6,7 @@ function F = init_solve(x)
     E_k = -77;
     E_na = 50;
     I_e = 0;
-    %init_solve - solve the value of n,m,h at the initial time
+    %init_solve - solve the value of V,n,m,h at the initial time
     %
     % Syntax: F = init_solve(x)
     %
