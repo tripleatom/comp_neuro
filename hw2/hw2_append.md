@@ -44,12 +44,12 @@ $I(t) = \sum_{m = -M}^{M}a_m \exp(j\dfrac{m\Omega t}{M})$,where,$\Omega = 2\pi \
 
 ![1_2d](F:\2020at\comp_neuron\hw2\pics\1_2d.png)
 
-如果将49行的current1换成current2，current2用来产生方波，并运行那一节，可以得到下图所示结果，可以看到，动作电位的发放很强地依赖于外部电流的形式。在这种情况下，firing frequency与外部电流的frequency保持一致，不会因为方波电流的
+如果将49行的current1换成current2，current2用来产生方波，并运行那一节，可以得到下图所示结果，可以看到，动作电位的发放很强地依赖于外部电流的形式。在这种情况下，firing frequency与外部电流的frequency保持一致，不会因为方波电流的幅值的变化产生变化
 
 ![1_2e](F:\2020at\comp_neuron\hw2\pics\1_2e.png)
 
 ![1_2f](F:\2020at\comp_neuron\hw2\pics\1_2f.png)
 
-结果好像挺简洁的，但是在调节参数上花了很多时间，拖延了好久orz。
+结果好像挺简洁的，但是在调节参数上花了很多时间
 
 以上。

@@ -38,10 +38,10 @@ genplot('n', ...
 
 subplot(3, 1, 2)
 genplot('m', ...
-    t, n, 'm');
+    t, m, 'm');
 subplot(3, 1, 3)
 genplot('h', ...
-    t, n, 'h');
+    t, h, 'h');
 
 %% part2
 disp('part 2')
